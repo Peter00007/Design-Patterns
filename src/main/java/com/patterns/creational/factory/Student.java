@@ -1,7 +1,7 @@
-package main.java.com.patterns.creational.factory;
+package com.patterns.creational.factory;
 
 
-public class Students implements UniversityStaff{
+public class Student implements Staff{
     @Override
     public void writeActivity() {
         System.out.println("Students are studying");

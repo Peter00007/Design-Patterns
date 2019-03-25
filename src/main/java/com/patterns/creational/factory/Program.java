@@ -1,22 +1,19 @@
-package main.java.com.patterns.creational.factory;
-
-
-
+package com.patterns.creational.factory;
 
 
 public class Program {
     public static void main(String[] args) {
         UniversityStaffFactory universityStaffFactory = createUniversityStaffFactoryBySpecialty("teachers");
-        UniversityStaff universityStaff = universityStaffFactory.createStaff();
+        Staff universityStaff = universityStaffFactory.createStaff();
         universityStaff.writeActivity();
     }
 
     static UniversityStaffFactory createUniversityStaffFactoryBySpecialty (String specialty) {
         if (specialty.equalsIgnoreCase("students")) {
-            return new StudentsUniversityFactory();
+            return new StudentFactory();
         }
         if (specialty.equalsIgnoreCase("teachers")) {
-            return new TeachersUniversityFactory();
+            return new TeacherFactory();
         }
         else {
             throw new RuntimeException(specialty + " is unknown");
